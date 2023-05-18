@@ -25,7 +25,7 @@ List<ChatModel> chatdata = [
     avatar: '',
   ),
   ChatModel(
-    name: 'Ramesh',
+    name: 'suresh',
     message: 'chale kahi',
     currentTime: DateTime.now(),
     avatar: '',

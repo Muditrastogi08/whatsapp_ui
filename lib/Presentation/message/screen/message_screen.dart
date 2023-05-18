@@ -13,14 +13,18 @@ class _MessagepageState extends State<Messagepage> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
-      child: Container(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: [
             Bubble(
               alignment: Alignment.center,
               color: const Color.fromRGBO(212, 234, 244, 1),
-              child: const Text('TODAY',
-                  textAlign: TextAlign.center, style: TextStyle(fontSize: 11)),
+              child: const Text(
+                'TODAY',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 11),
+              ),
             ),
             Bubble(
               margin: const BubbleEdges.only(top: 10),

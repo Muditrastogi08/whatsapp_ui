@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:uisecond/Pages/chat_detail_page.dart';
-import 'package:uisecond/models/chat_model.dart';
+import 'package:intl/intl.dart';
+import 'package:uisecond/Presentation/message/compo/message_page.dart';
+import 'package:uisecond/domian/models/chat_model.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -20,7 +21,7 @@ class _ChatPageState extends State<ChatPage> {
         itemBuilder: (context, index) => Column(
           children: [
             const Divider(
-              height: 10,
+              height: 6,
             ),
             ListTile(
               leading: const CircleAvatar(
@@ -32,12 +33,23 @@ class _ChatPageState extends State<ChatPage> {
                 chatdata[index].name,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(
-                chatdata[index].message,
-                style: const TextStyle(color: Colors.grey),
+              subtitle: Row(
+                children: [
+                  Icon(
+                    index == 0 || index == 2 || index == 8
+                        ? Icons.done_all
+                        : Icons.check_sharp,
+                    size: 15,
+                    color: index == 2 || index == 8 ? Colors.blue : Colors.grey,
+                  ),
+                  Text(
+                    chatdata[index].message,
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                ],
               ),
               trailing: Text(
-                chatdata[index].currentTime.toString(),
+                DateFormat.yMMM().format(chatdata[index].currentTime),
                 style: const TextStyle(color: Colors.grey, fontSize: 12),
               ),
               onTap: () {

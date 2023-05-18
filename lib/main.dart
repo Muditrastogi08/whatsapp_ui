@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
-import 'Pages/home_page.dart';
+import 'package:provider/provider.dart';
+import 'package:uisecond/Provider/home_provider.dart';
+import 'package:uisecond/splash_screen.dart';
 
 void main(List<String> args) {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<Homeprovider>(
+          create: (_) => (Homeprovider()),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xff075e54),
+        fontFamily: 'Helvetica Neue',
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: const Color(0xff25d366),
         ),
@@ -22,7 +34,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xff075e54),
         ),
       ),
-      home: const MyHomePage(),
+      home: const SplashScreen(),
     );
   }
 }

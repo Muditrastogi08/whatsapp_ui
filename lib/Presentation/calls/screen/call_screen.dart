@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uisecond/models/call_model.dart';
+import 'package:uisecond/domian/models/call_model.dart';
 
 class CallPage extends StatefulWidget {
   const CallPage({super.key});
@@ -19,7 +19,7 @@ class _CallPageState extends State<CallPage> {
         itemBuilder: (context, index) => Column(
           children: [
             const Divider(
-              height: 10,
+              height: 6,
             ),
             ListTile(
               leading: const CircleAvatar(

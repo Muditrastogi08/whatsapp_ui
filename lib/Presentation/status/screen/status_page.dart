@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uisecond/models/status_model.dart';
+import 'package:uisecond/domian/models/status_model.dart';
 
 class StatusPage extends StatefulWidget {
   const StatusPage({super.key});
@@ -18,9 +18,30 @@ class _StatusPageState extends State<StatusPage> {
         children: [
           const ListTile(
             leading: CircleAvatar(
+              radius: 25,
               backgroundColor: Colors.teal,
               backgroundImage: NetworkImage(
                   'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: CircleAvatar(
+                      radius: 10,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xff25d366),
+                        radius: 8,
+                        child: Icon(
+                          Icons.add,
+                          size: 15,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             title: Text(
               'My Status',
